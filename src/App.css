@@ -15,8 +15,3 @@ body {
   min-width: 100vw;
   overflow: hidden;
 }
-
-.App{
-  height: 100vh;
-  padding-top: 4em;
-}

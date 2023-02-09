@@ -1,0 +1,108 @@
+:root {
+  --primary: #0c85ff;
+  --secondary: #37b9f1;
+  --white: #ffffff;
+  --none: none;
+  --orange: #fa976c;
+  --yellow: #ffe683;
+  --alligator: #ffd800;
+  --deepYellow: #ffc845;
+  --kowloon: #dfe15b;
+  --softBlue: #8ad5dd;
+  --superBlue: #205eff;
+  --grey: #8b8484;
+  --red: #e72323;
+}
+
+.orangeBg {
+  background-color: var(--orange);
+}
+
+.yellowBg {
+  background-color: var(--yellow);
+}
+
+.alligatorBg {
+  background-color: var(--alligator);
+}
+
+.deepYellowBg {
+  background-color: var(--deepYellow);
+}
+
+.kowloonBg {
+  background-color: var(--kowloon);
+}
+
+.softBlueBg {
+  background-color: var(--softBlue);
+}
+
+.redBg {
+  background-color: var(--red);
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 25vw;
+  height: 6vw;
+  border-radius: 1vw;
+  background-color: #ffffff;
+  padding: 1vw 3vw 1vw 3vw;
+}
+
+.txt-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: #949292;
+  font-size: 1vw;
+  font-weight: 700;
+}
+
+.title-value {
+  font-weight: 700;
+  font-size: 2vw;
+}
+
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.im-power {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  color: #faf9f9;
+  font-size: 1.6vw;
+}
+
+.spn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: heartBeat 1s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
