@@ -51,13 +51,14 @@
   border-radius: 1vw;
   background-color: #ffffff;
   padding: 1vw 3vw 1vw 3vw;
+  color: black;
 }
 
 .txt-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+ text-align: center;
 }
 
 .title {
@@ -68,7 +69,8 @@
 
 .title-value {
   font-weight: 700;
-  font-size: 2vw;
+  font-size: 1.8vw;
+  text-align: center;
 }
 
 .icon-container {
@@ -104,5 +106,18 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+@media all and (max-width:960px){
+  .im-power {
+    width: 12vw;
+    height: 12vw;
+  }
+  .spn {
+    font-size: 4vw;
+  }
+  .title-value {
+    font-size: 4vw;
+
   }
 }

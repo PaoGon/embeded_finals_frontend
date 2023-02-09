@@ -107,6 +107,17 @@ const Dashboard: FC = () => {
       <div className="content">
         <div className="flex-col">
           <p className="chart-title">DAILY POWER CONSUMPTION</p>
+          <div className="consumption-cost-wrapper">
+            <div className="wrapper-consumption">
+              <p className="hourlyConsumption"> Current Consumption per Hour</p>
+              <p className="hourlyConsumption-data"> 12.1 kWh</p>
+            </div>
+            <div className="wrapper-cost">
+              <p className="cost"> Total Cost per Hour</p>
+              <p className="cost-data"> Php 20</p>
+            </div>
+
+          </div>
           <CustomBarChart />
         </div>
       </div>

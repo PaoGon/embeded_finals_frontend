@@ -46,13 +46,13 @@ const CustomBarChart: FC = () => {
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
-        <Legend
+        {/* <Legend
           verticalAlign='top'
           height={60}
           iconType={'rect'}
           iconSize={20}
           onClick={data => toogle_area(data.dataKey)}
-        />
+        /> */}
 
         <Bar dataKey="2021" stackId="a" fill="#5594f3" hide={key[2021]} />
         <Bar dataKey="2020" stackId="a" fill="#6cd6ff" hide={key[2020]} />
