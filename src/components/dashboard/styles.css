@@ -17,8 +17,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 65%;
-  justify-content: space-evenly;
+  width: 53%;
+  justify-content: start;
   gap: 1vw;
 }
 
@@ -45,7 +45,7 @@
 .flex-col {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 95%;
   width: 75vw;
   padding: 1vw;
   justify-content: center;
@@ -62,4 +62,79 @@
   color: #777777;
   font-weight: 700;
   font-size: 0.9vw;
+}
+.consumption-cost-wrapper{
+  display: flex;
+  width: 100%;
+  padding-top: 0.5vw;
+  justify-content: center;
+}
+.hourlyConsumption,.cost{
+  color: #777777;
+  font-weight: 500;
+  font-size: 0.8vw;
+}
+.hourlyConsumption-data,.cost-data{
+  color: black;
+  font-size: 2vw;
+  font-weight: 700;
+}
+.wrapper-cost,.wrapper-consumption{
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  padding-right: 4vw;
+}
+@media all and (max-width:960px){
+  .header{
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 1vw;
+  }
+  .header-flex{
+    flex-direction: column;
+  }
+  .title{
+    font-size: 2.8vw;
+  }
+  .cards{
+    width: 46vw;
+    height: 16vw;
+    border-radius: 2vw;
+  }
+  .btn {
+    width: 90vw;
+    height: 35vw;
+    border-radius: 4vw;
+    justify-content: space-around;
+  }
+  .btn-container{
+    padding-top: 2vw;
+  }
+  .hourlyConsumption,.cost{
+    font-size: 3vw;
+  }
+  .hourlyConsumption-data,.cost-data{
+    font-size: 4vw;
+  }
+  .chart-title {
+    font-size: 3vw;
+    padding-top: 4vw;
+  }
+  .wrapper-cost, .wrapper-consumption {
+    padding-right: 0vw;
+}
+.consumption-cost-wrapper {
+    padding-top: 1vw;
+    text-align: center;
+    gap: 5vw;
+    margin-right: 2vw;
+    margin-left: 2vw;
+  }
+  .flex-col {
+    width: 90%;
+  }
 }

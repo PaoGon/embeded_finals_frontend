@@ -171,3 +171,21 @@ input:checked ~ .text.off {
 input:checked ~ .text.on {
   transform: translateX(0) translateY(-50%);
 }
+@media all and (max-width:960px){
+.switch{
+  width: 55vw;
+  height: 15vw;
+  font-size: 5vw;
+}
+.slider-bulb,.slider-fan {
+  border-radius:7vw;
+  height: 15vw;
+}
+.slider-bulb:before,
+.slider-fan:before {
+  height: 12vw;
+  width: 12vw;
+  margin-left: 2vw;
+  margin-bottom: 0.7vw;
+}
+}
