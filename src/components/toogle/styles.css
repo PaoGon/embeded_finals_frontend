@@ -54,7 +54,7 @@ input:focus + .slider-bulb {
 }
 
 input:checked + .slider-bulb:before {
-  transform: translateX(8vw);
+  transform: translateX(9vw);
 }
 
 .switch .text {
@@ -142,7 +142,7 @@ input:focus + .slider-fan {
 }
 
 input:checked + .slider-fan:before {
-  transform: translateX(8vw);
+  transform: translateX(9vw);
 }
 
 .switch .text {
@@ -171,21 +171,35 @@ input:checked ~ .text.off {
 input:checked ~ .text.on {
   transform: translateX(0) translateY(-50%);
 }
-@media all and (max-width:960px){
-.switch{
-  width: 55vw;
-  height: 15vw;
-  font-size: 5vw;
-}
-.slider-bulb,.slider-fan {
-  border-radius:7vw;
-  height: 15vw;
-}
-.slider-bulb:before,
-.slider-fan:before {
-  height: 12vw;
-  width: 12vw;
-  margin-left: 2vw;
-  margin-bottom: 0.7vw;
-}
+@media all and (max-width: 960px) {
+  .switch {
+    width: 55vw;
+    height: 15vw;
+    font-size: 5vw;
+  }
+  .slider-bulb,
+  .slider-fan {
+    border-radius: 7vw;
+    height: 15vw;
+  }
+  .slider-bulb:before,
+  .slider-fan:before {
+    height: 12vw;
+    width: 12vw;
+    margin-left: 2vw;
+    margin-bottom: 0.7vw;
+  }
+  input:checked + .slider-fan:before,
+  input:checked + .slider-bulb:before {
+    transform: translateX(39vw);
+  }
+
+  .switch .text.on {
+    left: 20vw;
+    transform: translateX(-30vw) translateY(-50%);
+  }
+
+  .switch .text.off {
+    right: 20vw;
+  }
 }
