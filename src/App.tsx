@@ -12,6 +12,9 @@ const  App: FC = () =>{
 
   const queryClient = new QueryClient();
 
+  const date_now = new Date();
+  console.log(date_now.getMonth());
+
 
   return (
 

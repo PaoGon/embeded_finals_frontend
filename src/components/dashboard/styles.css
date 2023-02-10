@@ -106,7 +106,7 @@
     border-radius: 2vw;
   }
   .btn {
-    width: 90vw;
+    width: 95vw;
     height: 35vw;
     border-radius: 4vw;
     justify-content: space-around;
@@ -135,6 +135,6 @@
     margin-left: 2vw;
   }
   .flex-col {
-    width: 90%;
+    width: 95%;
   }
 }

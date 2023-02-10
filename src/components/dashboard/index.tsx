@@ -12,6 +12,9 @@ import "./styles.css";
 import CustomBarChart from "../BarChart";
 
 const Dashboard: FC = () => {
+  const [fanState, setFanState] = useState<boolean>();
+  const [bulbState, setBulbState] = useState<boolean>();
+
   const get_bulb_state = async () => {
     const requestOptions = {
       method: "GET",
@@ -27,7 +30,6 @@ const Dashboard: FC = () => {
 
     try {
       if (data_res.success === 1) {
-        console.log(data_res);
         return data_res;
       }
     } catch (err) {
@@ -46,7 +48,6 @@ const Dashboard: FC = () => {
 
     try {
       if (data_res.success === 1) {
-        console.log(data_res);
         return data_res;
       }
     } catch (err) {
@@ -54,16 +55,30 @@ const Dashboard: FC = () => {
     }
   };
 
-  const { isLoading: bulbIsLoading, data: bulb } = useQuery({
+  const { isLoading: bulbIsLoading } = useQuery({
+    refetchIntervalInBackground: true,
+    refetchInterval: 1000,
     queryKey: ["bulb"],
     queryFn: get_bulb_state,
-  });
-  const { isLoading: fanIsLoading, data: fan } = useQuery({
-    queryKey: ["fan"],
-    queryFn: get_fan_state,
+    onSuccess(data) {
+      const res = JSON.parse(data.data);
+      setBulbState(res.led1);
+    },
   });
 
-  // if (bulbIsLoading || fanIsLoading) return <div>loading..</div>;
+  const { isLoading: fanIsLoading } = useQuery({
+    refetchIntervalInBackground: true,
+    refetchInterval: 1000,
+    queryKey: ["fan"],
+    queryFn: get_fan_state,
+    onSuccess(data) {
+      const res = JSON.parse(data.data);
+      setFanState(res.led1);
+    },
+  });
+
+  if (bulbIsLoading || fanIsLoading) return <div>loading..</div>;
+
   return (
     <div className="main-container">
       <div className="header-flex">
@@ -99,25 +114,14 @@ const Dashboard: FC = () => {
         </div>
         <div className="btn-container">
           <div className="btn">
-            <Toogle type={"slider-fan"} />
-            <Toogle type={"slider-bulb"} />
+            <Toogle type={"slider-fan"} state={fanState} />
+            <Toogle type={"slider-bulb"} state={bulbState} />
           </div>
         </div>
       </div>
       <div className="content">
         <div className="flex-col">
           <p className="chart-title">DAILY POWER CONSUMPTION</p>
-          <div className="consumption-cost-wrapper">
-            <div className="wrapper-consumption">
-              <p className="hourlyConsumption"> Current Consumption per Hour</p>
-              <p className="hourlyConsumption-data"> 12.1 kWh</p>
-            </div>
-            <div className="wrapper-cost">
-              <p className="cost"> Total Cost per Hour</p>
-              <p className="cost-data"> Php 20</p>
-            </div>
-
-          </div>
           <CustomBarChart />
         </div>
       </div>

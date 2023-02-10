@@ -6,13 +6,12 @@ import { IToogle } from './models';
 import './styles.css';
 
 
-const Toogle: FC<IToogle> = ({ type }) => {
+const Toogle: FC<IToogle> = ({ type, state }) => {
   const [on, setOn] = useState<boolean>(false);
 
   const queryClient = useQueryClient();
 
   const post_signal = async (data: any) => {
-    console.log(JSON.stringify(data));
     const requestOptions = {
       method: "POST",
       headers: {
@@ -47,7 +46,6 @@ const Toogle: FC<IToogle> = ({ type }) => {
         led1: !on,
         type: type.split("-")[1]
       })
-    console.log(type.split("-")[1])
     setOn(!on)
   };
 
@@ -56,7 +54,7 @@ const Toogle: FC<IToogle> = ({ type }) => {
     <label className="switch">
       <input
         type="checkbox"
-        checked={on}
+        checked={state}
         onChange={getData}
       />
       <span className={type}></span>

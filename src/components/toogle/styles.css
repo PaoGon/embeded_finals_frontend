@@ -31,7 +31,7 @@
 
 .slider-bulb:before {
   position: absolute;
-  content: url("../../assets/watt.svg");
+  content: url("../../assets/bulb.svg");
   height: 4vw;
   width: 4vw;
   border-radius: 50%;
